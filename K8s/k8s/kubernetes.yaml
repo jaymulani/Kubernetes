@@ -1,0 +1,136 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: a3
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: a3pvc
+  namespace: a3
+spec:
+  storageClassName: standard
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 0.5Gi
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+  namespace: a3
+data:
+  FILE_PATH: /data/
+  PARSER_APP_URI: http://container2.a3
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: container1
+  namespace: a3
+spec:
+  selector:
+    app: container1
+  ports:
+    - protocol: TCP
+      port: 6000
+      targetPort: 6000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: container2
+  namespace: a3
+spec:
+  selector:
+    app: container2
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 6001
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: container1
+  namespace: a3
+spec:
+  selector:
+    matchLabels:
+      app: container1
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: container1
+    spec:
+      containers:
+        - name: container1
+          image: mulani/cloud:c1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 6000
+          envFrom:
+            - configMapRef:
+                name: config
+          resources:
+            limits:
+              cpu: "1"
+              memory: "512Mi"
+            requests:
+              cpu: "0.5"
+              memory: "256Mi"
+          volumeMounts:
+            - mountPath: /data
+              name: c2pvc
+      volumes:
+        - name: c2pvc
+          persistentVolumeClaim:
+            claimName: a3pvc
+
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: container2
+  namespace: a3
+spec:
+  selector:
+    matchLabels:
+      app: container2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: container2
+    spec:
+      containers:
+        - name: container2
+          image: mulani/cloud:c2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 6001
+          envFrom:
+            - configMapRef:
+                name: config
+          resources:
+            limits:
+              cpu: "1"
+              memory: "512Mi"
+            requests:
+              cpu: "0.5"
+              memory: "256Mi"
+          volumeMounts:
+            - mountPath: /data
+              name: c2pvc
+      volumes:
+        - name: c2pvc
+          persistentVolumeClaim:
+            claimName: a3pvc

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cloud-390101",
+  "private_key_id": "8492f32a04f018f90c03896719a1ab8251274768",
+  "private_key": "-----BEGIN PRIVATE KEY-----\n changed\nCBGXCzOjpA7CEHVDYA0yc+UyZilSIwtjBAFGpRhu0zXpXGeB7KFPCXKaYRGBvYGn\nBIUccJmHvKg2OY/2zUhaakINnK9LqAWqNViHoU59mTl7wCEHiR3HJrbhDi3BYz62\nibru35Lu4L+q+NMW7ag5uRStPQSA+wycaf/0TX7Y0PnS6HDJ6NCvGtaeIqejasja\n7ON4TFO5VhRxU39U9QiarvURLPfhXhIRJ2z+fYT2/xxB2hh/WdXKhltarueVgtke\nvhGMa+gl+eB+Bk9FkTK5jWz9+y/jqnQtyCZjeL4yMA8SK/zXfZyeK54t2MMh+m8c\npRntRSk3AgMBAAECggEAIbcJaxVAsXZdffYoH+m4sS1XLa983Ul14O4eIRKEw/S4\nwisUxYO0/ZHyf6QbhfYCx0DuIWvWcJsuBSPbJOH6t8Qn9Gjm0FetDaM4v5w6y8GY\nLzI2Tr8Nms1FoNGp/FvoqXpAlu4zKtnqmkhu9tze8ju6XpZgYXq2q92V2e4xlSZk\ndr84K4/3z+uP9D748Y/k+VW18jueEOgtYMnG391lXcbUn5wFQMAET0qE73hv2JlL\nOyh4vmMRegDfL4b3XTaBL+EKc6AwTZytDWzp4iUiPhQ9atwX083sxNpvhUbRxS6W\nbJGnjagl/R2d4prJ6QAeYBVQBApqVf60AWxtK6gOuQKBgQD+RKPl2ZdTCD0t/h4R\nqGnyBrVi38oRau0ES4jMS/+9Ucrs2NLeXZyorSUSKus1noczFlnHEYIPHUNm/mG+\nr1yS5XeEj+DtEEDYlo0zFfQiNBAvQspgJFNOVEQJlI0IW01000CIvZE2Pt3DaT9A\n5LZHmYsHlBTx+ZWog9iDJXGimQKBgQDnV7TzalIN4IXQcR/wIVOsxE3reOkAlmpe\n40f4FpmALxdWyxtSsx16DIx51i5BHPmU3+oPic2d40pCLhfaoFXUk7RWkpR6Mf6A\nojFE2480FAm/4S5Y+NzwHFilYAYTOqK/kEStJ+b/yl6t2mEJI7jcrFJ1nZvx+v95\nqSxk3w1cTwKBgQDbwfNtuqwBBYPq9lCCrm4y0f1/ITAB8co8BhSLjbvQopqiLZvC\nuGGnn04E77cuNn9fdhfN56Hi8kXJBF7ycZmvFEhB+CBMg9mn2CbdWkIQNbMvRain\ng33Emyvao9tot5CwQczq4fxZR+he9d3HdmTcaSYyPJgFstLYPGuqnXgjMQKBgGF8\nmzssJZHFeH5C/YNyd9FJE9DTrdRajk6YFj7cPyk+LuabRlNOOXCyEwxQjkNQE3iB\n9x8/Ic+T9Tn4NIMjp6eh6o/Eyx7HLIlGT97Faw42F3mtSZuim2/vcgeWdFjsD6MM\nB3S0aOqHe+hlKxjv3bnYQBNiLFIHRFsfSB7lw7qPAoGBANIbYPmcB0Hj+bdCshca\nYkEjQcCS6n8jcIMOBg9eUEItdkTJlz23M94B41G2PuVArmbQ8K9RZlJ3/lqKLw1T\nsZBkHMWdEW2lO4rYY3lHpQucgpw8m7sGFHq6L791Ws1lCZ5GTyAdc4S4oSKh1yxx\nTHD4rX2ZJ9zmt3nGFFqMN0IB\n-----END PRIVATE KEY-----\n",
+  "client_email": "cloudk8s@cloud-390101.iam.gserviceaccount.com",
+  "client_id": "118345902473289220689",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloudk8s%40cloud-390101.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
