@@ -1,0 +1,36 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/kubernetes-390222/container2/container2-image:latest'
+      - '.'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'tag'
+      - 'us-central1-docker.pkg.dev/kubernetes-390222/container2/container2-image:latest'
+      - 'us-central1-docker.pkg.dev/kubernetes-390222/container2/container2-image:1.0'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'us-central1-docker.pkg.dev/kubernetes-390222/container2/container2-image:1.0'
+
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args:
+      - 'apply'
+      - '-f'
+      - 'container2-deployment.yaml'
+      - '-f'
+      - 'container2-service.yaml'
+
+
+images:
+  - 'us-central1-docker.pkg.dev/kubernetes-390222/container2/container2-image:1.0'
+
+options:
+  env:
+    - 'CLOUDSDK_COMPUTE_REGION=us-central1'
+    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=kube-cluster'
